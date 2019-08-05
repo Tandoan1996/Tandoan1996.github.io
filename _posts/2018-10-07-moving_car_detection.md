@@ -47,6 +47,33 @@ The number of *orientations*, *pixels_per_cell*, and *cells_per_block* for compu
     rgb_img, y_img, u_img, v_img = source.visualize()
 ```
 
+## Classifier Training:
+
+The Support Vector Machine model is trained by using 8792 samples of vehicle images and 8968 samples of non-image. This dataset is preselected by [Udacity](https://www.udacity.com/) with images from the [GTI vehicle image database](www.gti.ssr.upm.es/data/Vehicle_database.html) and the [KTTI vision benchmark suite](http://www.cvlibs.net/datasets/kitti/). As a safety measure, a *scaler* is used to transform the raw features before feeding them to the classifier for training, reducing the chance of the classifier to behave badly.
+
+```python
+    # Feature Extraction...
+    for img in vehicle_imgs:
+      vehicles_features.append(source.features(img))
+    for img in nonvehicle_imgs:
+      nonvehicles_features.append(source.features(img))
+
+    # Scaling Features...
+    unscaled_x = np.vstack((vehicles_features, nonvehicles_features)).astype(np.float64)
+    scaler = StandardScaler().fit(unscaled_x)
+    x = scaler.transform(unscaled_x)
+    y = np.hstack((np.ones(total_vehicles), np.zeros(total_nonvehicles)))
+
+    # Training Features...
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = rand.randint(1, 100))
+    svc = LinearSVC()
+    svc.fit(x_train, y_train)
+    accuracy = svc.score(x_test, y_test)
+```
+
+## Importing the input video:
+
+
 
 
 
