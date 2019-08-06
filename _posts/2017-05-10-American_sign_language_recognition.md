@@ -72,7 +72,7 @@ Support Vector Machine is one of the supervised learning model having associated
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/SVM.png" alt="">
 
-                    **SVM Algorithm**
+                    SVM Algorithm
 
 SVMs maximize the margin around separating hyperplane. The decision function specified with the support vectors, which are subset of training samples.
 
