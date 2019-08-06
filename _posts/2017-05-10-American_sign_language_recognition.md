@@ -14,7 +14,7 @@ American sign language (ASL) recognition is a task of understanding signs made b
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/diagram.png" alt="">
 
-                    Basic Process of Sign Language Recognition 
+                    Basic Process of Sign Language Recognition
 
 ## Image data collection:
 
@@ -38,7 +38,7 @@ The original RGB image is captured. The RGB image has 3 color planes for each fr
 
 Due to modifications, the resultant image may be having noise and blur. Therefore, filter is used to reduce the effect of noise and blur. Gaussian low pass filter is used here as it reduces high-frequency components of Fourier transform of image. Further effect of Gaussian filter is that it helps in the improvement of results of edge detection algorithm.
 
-                    <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/gray_scale.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/gray_scale.png" alt="">
 
                      Gray Scale Image
 
@@ -48,7 +48,7 @@ In an image, edge is a local feature that separates two regions within a neighbo
 
 Canny edge detector is used to detect a range of edges in images using multiple stage algorithm. It first derivative having noise cleaning and the accuracy is improved by using noise smoothing. The result is blurred version of original image. Another stage is to find the intensity gradient of the image. It uses four filters to detect vertical, diagonal and horizontal edges in blurred image. The figure below shows the result of canny edge detection.
 
-                   <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/canny_edge.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/canny_edge.png" alt="">
 
                      Canny Edge Detection
 
@@ -58,13 +58,13 @@ Improved sobel edge detector is a combination of sobel operator, dilation, and e
 
 Dilation and erosion are morphological operations that process image based on shapes. These operations apply structure elements to an input image and create  a same-sized output image. In output image, the value of each pixel is obtained by comparison of corresponding pixel of input image and its neighbor. [Dilation](https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html) is used to add pixels to the object boundaries in image and [Erosion](https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html) removes pixels from object boundaries. The decision on number of pixels to be added or deleted depends upon size and shape of structuring element.
 
-                    <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/dilate_erosion.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/dilate_erosion.png" alt="">
 
                       Dilated and Eroded Image
 
 To smooth the image, open and close operation are performed. Open operation is applying erosion followed by dilation. Close operation is applying dilation followed by erosion. Then sobel edge detection operator is applied on the resulting image. The whole process is to enhance sobel edge detection.
 
-                      <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/sobel.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/sobel.png" alt="">
 
                       Improved Sobel Edge Detected Image
 
@@ -80,7 +80,7 @@ The output of canny edge detection is used to get features. The technique used i
 
 Support Vector Machine is one of the supervised learning model having associated learning algorithm. SVMs are used for analysis of data and recognition patterns, and are applied for classification and regression analysis. SVM belongs to broad family of kernel based learning algorithms.
 
-                  <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/SVM.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/SVM.png" alt="">
 
                     SVM Algorithm
 
@@ -88,7 +88,7 @@ SVMs maximize the margin around separating hyperplane. The decision function spe
 
 **Support vectors**: The data points which are closest to the decision surface are called support vectors. It is the very difficult task to classify them.  
 
-                 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/Support_vector.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/Support_vector.png" alt="">
 
                     Support vectors
 
