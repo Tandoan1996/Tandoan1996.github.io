@@ -38,6 +38,8 @@ Due to modifications, the resultant image may be having noise and blur. Therefor
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/gray_scale.png" alt="">
 
+                     Gray Scale Image
+
 ### Canny Edge Detection:
 
 In an image, edge is a local feature that separates two regions within a neighborhood. This separation is based on the difference of intensity in the image. Before applying canny edge detection, a threshold value is calculated. The threshold function is based on [Otsu's method](https://en.wikipedia.org/wiki/Otsu%27s_method) which chooses threshold for minimizing interclass variance between black and white pixels.
@@ -45,6 +47,8 @@ In an image, edge is a local feature that separates two regions within a neighbo
 Canny edge detector is used to detect a range of edges in images using multiple stage algorithm. It first derivative having noise cleaning and the accuracy is improved by using noise smoothing. The result is blurred version of original image. Another stage is to find the intensity gradient of the image. It uses four filters to detect vertical, diagonal and horizontal edges in blurred image. The figure below shows the result of canny edge detection.
 
  <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/canny_edge.png" alt="">
+
+                     Canny Edge Detection
 
 ### Improved Sobel Edge Detection:
 
@@ -54,9 +58,13 @@ Dilation and erosion are morphological operations that process image based on sh
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/dilate_erosion.png" alt="">
 
+                      Dilated and Eroded Image
+
 To smooth the image, open and close operation are performed. Open operation is applying erosion followed by dilation. Close operation is applying dilation followed by erosion. Then sobel edge detection operator is applied on the resulting image. The whole process is to enhance sobel edge detection.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/sobel.png" alt="">
+
+                      Improved Sobel Edge Detected Image
 
 ## Feature Extraction:
 
@@ -79,3 +87,24 @@ SVMs maximize the margin around separating hyperplane. The decision function spe
 **Support vectors**: The data points which are closest to the decision surface are called support vectors. It is the very difficult task to classify them.  
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/Support_vector.png" alt="">
+
+                    Support vectors
+
+There are mainly two types of SVMs:
+
+* Linear Support Vector Machine
+* Non Linear Support Vector Machine
+
+Fundamental idea of SVM is optimal hyper-plane for linear separable patterns. In case of not linearly separable patterns, it transforms original data map into new space that is a kernel function. For more details of how SVM works : [SVM algorithm](https://en.wikipedia.org/wiki/Support-vector_machine#Linear_SVM). The accuracy obtained by kernel functions is shown in following tables. In the table below, log c and log g are parameters representing logarithmic values of cost and gamma respectively. Three datasets are taken: Data-Mean, Data-Std, and Data_MeS.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/table1.png" alt="">
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/table2.png" alt="">
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/table3.png" alt="">
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/table4.png" alt="">
+
+## Conclusions:
+
+In this project, sign language images are analyzed. The input are American sign language images. After applying canny edge detection as a feature extraction step, three datasets are fed into SVM classifier for the training purpose and are evaluated to find the best accuracy obtained. As regards to the results, the accuracy over Data-Mean is the highest. 
