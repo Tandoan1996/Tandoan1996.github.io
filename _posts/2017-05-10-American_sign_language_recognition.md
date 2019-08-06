@@ -107,4 +107,8 @@ Fundamental idea of SVM is optimal hyper-plane for linear separable patterns. In
 
 ## Conclusions:
 
-In this project, sign language images are analyzed. The input are American sign language images. After applying canny edge detection as a feature extraction step, three datasets are fed into SVM classifier for the training purpose and are evaluated to find the best accuracy obtained. As regards to the results, the accuracy over Data-Mean is the highest. 
+In this project, sign language images are analyzed. The input are American sign language images. After applying canny edge detection as a feature extraction step, three datasets are fed into SVM classifier for the training purpose and are evaluated to find the best accuracy obtained. As regards to the results, the accuracy over Data-Mean is the highest.
+
+## References:
+
+[1] Deng, Caixia, Weifeng Ma, and Yin Yin, "An edge detection approach of image fusion based on improved Sobel operator", *Image and Signal Processing (CISP)*, *2011 4th International Congress* on. Vol.3, IEEE, 2011.
