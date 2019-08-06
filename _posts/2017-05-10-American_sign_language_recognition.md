@@ -14,7 +14,7 @@ American sign language (ASL) recognition is a task of understanding signs made b
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/diagram.png" alt="">
 
-                    Basic Process of Sign Language Recognition
+            Basic Process of Sign Language Recognition
 
 ## Image data collection:
 
@@ -66,7 +66,7 @@ To smooth the image, open and close operation are performed. Open operation is a
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/sobel.png" alt="">
 
-                      Improved Sobel Edge Detected Image
+                Improved Sobel Edge Detected Image
 
 ## Feature Extraction:
 
