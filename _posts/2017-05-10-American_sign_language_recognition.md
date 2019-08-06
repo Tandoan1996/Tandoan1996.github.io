@@ -71,6 +71,7 @@ The output of canny edge detection is used to get features. The technique used i
 Support Vector Machine is one of the supervised learning model having associated learning algorithm. SVMs are used for analysis of data and recognition patterns, and are applied for classification and regression analysis. SVM belongs to broad family of kernel based learning algorithms.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/american_sign/SVM.png" alt="">
+
                     **SVM Algorithm**
 
 SVMs maximize the margin around separating hyperplane. The decision function specified with the support vectors, which are subset of training samples.
